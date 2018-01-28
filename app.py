@@ -36,4 +36,4 @@ def page_not_found(e):
 
 # start the server with the 'run()' method
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(debug=False)
