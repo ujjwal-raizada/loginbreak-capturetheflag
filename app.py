@@ -13,9 +13,9 @@ def home():
 def success():
     return render_template('welcome.html')  # render a template
 
-@app.route('/login.txt')
+@app.route('/creds')
 def crack():
-    return render_template('login.txt')  # render a template
+    return render_template('creds.html')  # render a template
 
 
 # route for handling the login page logic
@@ -28,6 +28,10 @@ def login():
         else:
             return redirect(url_for('success'))
     return render_template('login.html', error=error)
+
+@app.errorhandler(404)
+def page_not_found(e):
+    return render_template('404.html'), 404
 
 
 # start the server with the 'run()' method
